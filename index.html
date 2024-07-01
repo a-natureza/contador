@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +11,17 @@
       }
 
       body {
-        border: 1px solid red;
         min-height: 100vh;
-        background-color: black;
-        color: white;
+        background-color: lightblue;
+        color: black;
         display: grid;
         place-items: center;
       }
+
       section {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 20px;
-        border-radius: 5px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
         text-align: center;
       }
       p {
@@ -33,30 +33,68 @@
     <section>
       <h1>Contador</h1>
       <p id="resultado">0</p>
-      <button onclick="diminuir()">menos</button>
-      <button onclick="aumentar()">mais</button>
-      <script>
-        // estado da minha aplicação
-        let numero = 0;
-
-        function aumentar() {
-          numero++;
-          mostrarNaTela();
-        }
-        function diminuir() {
-          numero--;
-          mostrarNaTela();
-        }
-
-        // jogar o estado da aplicação na tela
-        function mostrarNaTela() {
-          const p = document.querySelector("#resultado");
-          p.innerText = numero;
-        }
-
-        //iniciar
-        mostrarNaTela();
-      </script>
+      <button onclick="diminuir()">- 1</button>
+      <button onclick="aumentar()">+ 1</button>
     </section>
+
+    <script>
+      // estado da minha aplicação
+      let numero = 0;
+
+      function aumentar() {
+        numero++;
+        mostrarNaTela();
+      }
+      function diminuir() {
+        numero--;
+        mostrarNaTela();
+      }
+
+      // jogar o estado da aplicação na tela
+      function mostrarNaTela() {
+        const p = document.querySelector("#resultado");
+        p.innerText = numero;
+      }
+      mostrarNaTela;
+
+      //iniciar
+      mostrarNaTela();
+    </script>
+    <!-- script alternativo para cronometro -->
+    <!-- <script>
+      // estado da aplicação
+      let numero = 0;
+      let intervalo = null;
+
+      function iniciar() {
+        if (!intervalo) {
+          intervalo = setInterval(aumentar, 1000);
+        }
+      }
+
+      function parar() {
+        clearInterval(intervalo);
+        intervalo = null;
+      }
+
+      function resetar() {
+        parar();
+        numero = 0;
+        mostrarNaTela();
+      }
+
+      function aumentar() {
+        numero++;
+        mostrarNaTela();
+      }
+
+      function mostrarNaTela() {
+        const p = document.querySelector("#resultado");
+        p.innerText = numero;
+      }
+
+      // iniciar a tela com o valor inicial
+      mostrarNaTela();
+    </script> -->
   </body>
 </html>
